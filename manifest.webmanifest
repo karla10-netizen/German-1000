@@ -1,0 +1,17 @@
+{
+  "name": "German 1000",
+  "short_name": "German 1000",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#111827",
+  "description": "Personal practical German vocabulary trainer",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
