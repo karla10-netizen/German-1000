@@ -112,7 +112,7 @@ function normalize(s){return s.toLowerCase().trim().replace(/[.!?,;:]+$/,"").rep
 function grade(x,ok,pos){
  schedule(x,ok);
  feedback.textContent=ok?"Correct.":"Not quite — "+x.g;
- known?.classList.add("hidden");missed?.classList.add("hidden");check?.classList.add("hidden");
+ known?.classList.add("hidden");missed?.classList.add("hidden");document.getElementById("check")?.classList.add("hidden");
  next.classList.remove("hidden");next.onclick=()=>sessionView(pos+1);
 }
 function doneView(){
