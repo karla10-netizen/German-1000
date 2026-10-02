@@ -77,7 +77,7 @@ function home(){
  <div class="grid"><button id="new">Learn new<br><small>${s.new} new available</small></button><button id="weak">Practice weak<br><small>${s.weak} items</small></button></div>
  <div class="grid"><button id="add">+ Add personal word</button><button id="browse">My vocabulary</button></div><p class="muted" style="margin-top:18px;font-size:14px">Tip: once hosted, use your browser menu → Add to Home Screen to make it feel like an app.</p>
  </section>`;
- start.onclick=()=>begin("review");new.onclick=()=>begin("new");weak.onclick=()=>begin("weak");add.onclick=addView;browse.onclick=browseView;
+ start.onclick=()=>begin("review");document.getElementById("new").onclick=()=>begin("new");weak.onclick=()=>begin("weak");add.onclick=addView;browse.onclick=browseView;
 }
 function begin(kind){
  let a=state.items.filter(x=>kind==="new"?x.seen===0:kind==="weak"?x.wrong>0:!mastered(x)&&due(x));
