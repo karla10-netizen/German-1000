@@ -80,10 +80,10 @@ function home(){
  start.onclick=()=>begin("review");document.getElementById("new").onclick=()=>begin("new");weak.onclick=()=>begin("weak");add.onclick=addView;browse.onclick=browseView;
 }
 function begin(kind){
- let a=state.items.filter(x=>kind==="new"?x.seen===0:kind==="weak"?x.wrong>0:!mastered(x)&&due(x));
+ let a=state.items.filter(x=>kind==="new"?x.seen===0:kind==="weak"?x.wrong>0:due(x));
  if(!a.length)a=state.items.filter(x=>!mastered(x)).sort((a,b)=>priority(b)-priority(a)||a.level-b.level).slice(0,10);
  if(kind==="new")a=a.slice(0,state.settings.dailyNew);
- a=a.sort((a,b)=>priority(b)-priority(a)||a.level-b.level||a.seen-b.seen).slice(0,10);
+ a=a.sort((a,b)=>(mastered(a)-mastered(b))||priority(b)-priority(a)||a.level-b.level||a.seen-b.seen).slice(0,10);
  state.session=a.map(x=>x.id);save();sessionView(0);
 }
 function sessionView(pos){
